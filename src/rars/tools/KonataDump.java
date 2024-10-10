@@ -470,13 +470,13 @@ public class KonataDump extends AbstractToolAndApplication {
         //Otherwise we add a new instruction to the pipeline and remove it from the queue.
         if (!instructionQueue.isEmpty()) {
             instr = instructionQueue.poll();
-            pipeline.getFirst().setInstruction(instr);
+            pipeline.get(0).setInstruction(instr);
         }
     }
 
     private void clearLastCycleRegister() {
         int rd;
-        Cycle lastCycle = pipeline.getLast();
+        Cycle lastCycle = pipeline.get(pipeline.size() - 1);
         pipelineInstr lastInstruction = lastCycle.getInstruction();
 
         if (lastInstruction != null) {
@@ -550,8 +550,8 @@ public class KonataDump extends AbstractToolAndApplication {
     private void pipelineIntoKonata() {
         Stage stage;
         pipelineInstr instruction;
-        pipelineInstr firstInstruction = pipeline.getFirst().getInstruction();
-        pipelineInstr lastInstruction = pipeline.getLast().getInstruction();
+        pipelineInstr firstInstruction = pipeline.get(0).getInstruction();
+        pipelineInstr lastInstruction = pipeline.get(pipeline.size() - 1).getInstruction();
 
         if (firstInstruction != null && !firstInstruction.getKonoted()) {
             logFirstInstruction(firstInstruction);
