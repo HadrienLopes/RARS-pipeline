@@ -5,6 +5,15 @@ RARS, the RISC-V Assembler, Simulator, and Runtime, will assemble and simulate
 the execution of RISC-V assembly language programs. Its primary goal is to be
 an effective development environment for people getting started with RISC-V. 
 
+## Fork Feature
+  - Pipeline visualization through a new tool on the software called "Konata Log Dump".
+
+    This tool allows the creation of logfiles for the executed program in RARS. Logfiles can be opened and visualized using Konata software, providing insights into the program's execution pipeline.
+
+    Demo:
+    
+    https://github.com/user-attachments/assets/d4e41bc9-0357-40fd-a07c-337741aac230
+
 ## Features
 
   - RISC-V IMFDN Base (riscv32 and riscv64)
